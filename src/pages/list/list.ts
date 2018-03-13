@@ -15,9 +15,11 @@ export class ListPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private carService: CarServiceProvider) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
+    console.log("building list page");
   }
 
-  IonViewDidLoad(){
+  ionViewDidLoad(){
+    console.log("loaded list page");
     this.carService.getAll().subscribe((respsone)=>{
       console.log("Got this data", respsone);
       this.items = respsone;
@@ -37,5 +39,9 @@ export class ListPage {
 
   edit(item:any){
     this.navCtrl.push(EditPage, item);
+  }
+
+  remove(item:any){
+    this.carService.delete(item.id);
   }
 }
