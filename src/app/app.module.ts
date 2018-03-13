@@ -11,6 +11,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
+import { CarServiceProvider } from '../providers/car-service/car-service';
+import { DetailPage } from '../pages/detail/detail';
+import { EditPage } from '../pages/edit/edit';
 
 // Initialize Firebase
 var config = {
@@ -26,7 +29,9 @@ var config = {
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    DetailPage,
+    EditPage
   ],
   imports: [
     BrowserModule,
@@ -38,12 +43,15 @@ var config = {
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    DetailPage,
+    EditPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CarServiceProvider
   ]
 })
 export class AppModule {}

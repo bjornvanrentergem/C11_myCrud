@@ -13,6 +13,29 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Brand</ion-label>
+      <ion-input type="text" [(ngModel)]="item.brand"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Make</ion-label>
+      <ion-input type="text" [(ngModel)]="item.make"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Color</ion-label>
+      <ion-input type="text" [(ngModel)]="item.color"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button full color="sinaas" (click)="save()">
+    Save
+  </button>
 
 </ion-content>
